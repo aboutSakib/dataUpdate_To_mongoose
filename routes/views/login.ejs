@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login</title>
+  </head>
+  <body>
+    <form method="POST" action="/user">
+      <input type="text" placeholder="Enter your name" name="userName" />
+      <input type="text" placeholder="Enter your age" name="age" />
+      <button type="submit">Submit</button>
+    </form>
+
+    <% if (allUser.length) { %> <% for (let i = 0; i < allUser.length; i++) { %>
+    <p>
+      <a href="/profile/<%= allUser[i]._id %>"
+        ><%= allUser[i].name %> age: <%= allUser[i].age %></a
+      >
+    </p>
+    <% } %> <% } else { %>
+    <h1>No User Found</h1>
+    <% } %>
+  </body>
+</html>
